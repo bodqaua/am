@@ -1,4 +1,4 @@
-$box-shadow: 0 10px 10px rgba(0, 0, 0, .15);
+@import "../../../../variables";
 
 .am-dropdown {
   position: relative;
@@ -45,6 +45,10 @@ $box-shadow: 0 10px 10px rgba(0, 0, 0, .15);
     width: 100%;
     border-radius: 0 0 6px 6px;
     box-shadow: $box-shadow;
+
+    &.top {
+      transform: translateY(-100%);
+    }
 
     &.open {
       opacity: 1;

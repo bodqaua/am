@@ -1,21 +1,144 @@
 <div id="landing">
   <div class="container">
     <section class="main-search">
-      <h2>Marketplace for buyers and sellers who love cars</h2>
-      <h3></h3>
-      <h1>Find your next car here</h1>
+      <h2>{{'landing.subtitle' | translate}}</h2>
+      <h1>{{'landing.title' | translate}}</h1>
       <div>
         <app-main-search></app-main-search>
       </div>
     </section>
+
     <section class="market-status">
-      <h3>Market status</h3>
+      <h3>{{ 'landing.MARKET_STATUS' | translate}}</h3>
+      <app-am-slider-timeout>
+        <img *ngFor="let image of carsTimeout" [src]="image" alt="image" #slide>
+      </app-am-slider-timeout>
     </section>
-    <section class="continue-search"></section>
-    <section class="selling"></section>
-    <section class="car-body-type"></section>
-    <section class="most-popular"></section>
-    <section class="popular-makes"></section>
+
+    <section class="continue-search">
+      <h2 class="section-title">{{ 'landing.CONTINUE_SEARCHING' | translate }}</h2>
+      <h3>{{ 'landing.ALL_MAKES' | translate }}</h3>
+
+      <app-am-slider [slidesLength]="6">
+        <div *ngFor="let car of cars6" class="small-card" #slide>
+          <img [src]="car.image" alt="car">
+          <p class="title">{{car.title}}</p>
+          <p class="subtitle">{{car.subtitle}}</p>
+        </div>
+      </app-am-slider>
+    </section>
+
+    <section class="selling">
+      <div class="tabs-wrapper">
+        <div class="tabs-group">
+          <div (click)="setActiveTab(tab.index)" *ngFor="let tab of tabs" class="tab" [class.active]="tab.active">
+            <span>{{ tab.text | translate }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs-body">
+        <div *ngIf="tabs[0].active">
+          <app-am-slider [slidesLength]="4">
+            <div *ngFor="let car of cars4" class="small-card" #slide>
+              <img [src]="car.image" alt="car">
+              <p class="title left">{{car.title}}</p>
+              <p class="subtitle left">{{car.subtitle}}</p>
+              <div class="hover-visible-data">
+                <span>
+                  {{ car.offers }}
+                </span>
+                <i class="fas fa-chevron-right left-padding"></i>
+              </div>
+            </div>
+          </app-am-slider>
+        </div>
+        <div *ngIf="tabs[1].active">
+          <app-am-slider [slidesLength]="4">
+            <div *ngFor="let car of cars4.reverse()" class="small-card" #slide>
+              <img [src]="car.image" alt="car">
+              <p class="title left">{{car.title}}</p>
+              <p class="subtitle left">{{car.subtitle}}</p>
+              <div class="hover-visible-data">
+                <span>
+                  {{ car.offers }}
+                </span>
+                <i class="fas fa-chevron-right left-padding"></i>
+              </div>
+            </div>
+          </app-am-slider>
+        </div>
+        <div *ngIf="tabs[2].active">
+          <app-am-slider [slidesLength]="4">
+            <div *ngFor="let car of cars4" class="small-card" #slide>
+              <img [src]="car.image" alt="car">
+              <p class="title left">{{car.title}}</p>
+              <p class="subtitle left">{{car.subtitle}}</p>
+              <div class="hover-visible-data">
+                <span>
+                  {{ car.offers }}
+                </span>
+                <i class="fas fa-chevron-right left-padding"></i>
+              </div>
+            </div>
+          </app-am-slider>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="car-body-type">
+      <h2 class="section-title">{{ 'landing.BODY_TYPE' | translate }}
+        <span class="title-right-action">
+          {{ 'landing.SEE_ALL' | translate}}
+          <i class="fas fa-chevron-right"></i>
+        </span>
+      </h2>
+
+      <app-am-slider [slidesLength]="6" [navigation]="false">
+        <div *ngFor="let car of carSixBodyType" class="small-card" #slide>
+          <img [src]="car.image" alt="car">
+          <p class="subtitle">{{car.title}}</p>
+        </div>
+      </app-am-slider>
+    </section>
+
+    <section class="most-popular">
+      <h2 class="section-title">{{ 'landing.MOST_POPULAR' | translate }} Canada
+        <span class="title-right-action">
+        <i class="fas fa-map-marker-alt right-padding"></i>
+        Toronto (+100km)
+        <i class="fas fa-chevron-down"></i>
+      </span>
+      </h2>
+
+      <div>
+        <app-am-slider [slidesLength]="4">
+          <div *ngFor="let car of cars4" class="small-card" #slide>
+            <img [src]="car.image" alt="car">
+            <p class="title left">{{car.title}}</p>
+            <p class="subtitle left">{{car.subtitle}}</p>
+            <div class="hover-visible-data">
+                <span>
+                  {{ car.offers }}
+                </span>
+              <i class="fas fa-chevron-right left-padding"></i>
+            </div>
+          </div>
+        </app-am-slider>
+      </div>
+    </section>
+
+    <section class="popular-makes">
+      <h2 class="section-title">{{ 'landing.POPULAR_MAKES' | translate }}</h2>
+
+      <app-am-slider [slidesLength]="6" [navigation]="false">
+        <div *ngFor="let car of carSixMakes" class="small-card" #slide>
+          <img [src]="car.image" alt="car">
+          <p class="subtitle">{{car.title}}</p>
+        </div>
+      </app-am-slider>
+    </section>
   </div>
 </div>
 

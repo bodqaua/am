@@ -1,0 +1,11 @@
+<div class="slider-timeout-wrapper">
+  <div class="content-wrapper" #wrapper>
+    <ng-content></ng-content>
+  </div>
+  <div class="steps">
+    <div *ngFor="let step of steps"
+         class="step" [class.active]="step === activeStep"
+         (click)="changeStep(step)"
+    ></div>
+  </div>
+</div>

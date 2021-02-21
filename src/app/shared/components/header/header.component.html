@@ -7,19 +7,19 @@
       <div>
         <ul>
           <li class="header-link" [class.active]="activeLink === 1" (click)="setActiveLink(1)">
-            <a routerLink="/">Home</a>
+            <a routerLink="/">{{'header.HOME' | translate}}</a>
           </li>
           <li class="header-link" [class.active]="activeLink === 2" (click)="setActiveLink(2)">
-            <a routerLink="/">Sell Car</a>
+            <a routerLink="/">{{'header.SELL_CAR' | translate}}</a>
           </li>
           <li class="header-link" [class.active]="activeLink === 3" (click)="setActiveLink(3)">
-            <a routerLink="/">Buy Car</a>
+            <a routerLink="/">{{'header.BUY_CAR' | translate}}</a>
           </li>
           <li class="header-link" [class.active]="activeLink === 4" (click)="setActiveLink(4)">
-            <a routerLink="/">Market</a>
+            <a routerLink="/">{{'header.MARKET' | translate}}</a>
           </li>
           <li class="header-link" [class.active]="activeLink === 5" (click)="setActiveLink(5)">
-            <a routerLink="/">Contact Us</a>
+            <a routerLink="/">{{'header.CONTACT_US' | translate}}</a>
           </li>
         </ul>
       </div>
@@ -28,10 +28,10 @@
         <i class="far fa-star"></i>
         <button class="header-icon-btn">
           <i class="far fa-user"></i>
-          Sign in
+          {{'header.SIGN_IN' | translate}}
         </button>
         <button class="am-btn am-btn-primary">
-          Sign up
+          {{'header.SIGN_UP' | translate}}
         </button>
       </div>
     </nav>

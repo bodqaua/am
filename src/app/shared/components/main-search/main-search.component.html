@@ -1,6 +1,6 @@
 <div class="main-search-wrapper">
   <div class="main-search__header">
-    <span>Advanced search</span>
+    <span>{{ 'landing.ADVANCE_SEARCH' | translate}}</span>
   </div>
   <div class="main-search__content">
     <div>
@@ -17,7 +17,7 @@
       <app-am-dropdown
         [options]="carOptions"
         leftIcon="fas fa-car"
-        placeholder="Brand and model"
+        placeholder="{{ 'landing.BRAND_AND_MODEL' | translate }}"
         customClass="main-search-dropdown-car"
         (onSelecting)="log($event)"
       ></app-am-dropdown>
@@ -25,7 +25,7 @@
     <div class="vertical-divider"></div>
     <div class="price-block">
       <i class="fas fa-wallet"></i>
-      <input type="number" class="main-search__number-input" placeholder="Max price">
+      <input type="number" class="main-search__number-input" placeholder="{{'landing.MAX_PRICE' | translate}}">
     </div>
     <div>
       <button class="am-btn am-btn-primary am-btn-icon">

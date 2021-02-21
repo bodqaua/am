@@ -1,1 +1,75 @@
-<hr>
+<div class="container">
+  <footer>
+    <div class="socials-block">
+      <b>auto.market</b>
+      <div class="socials">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+      </div>
+    </div>
+    <div class="links-block">
+      <ul>
+        <li>
+          <a routerLink="/">{{ 'header.HOME' | translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/">{{ 'header.SELL_CAR' | translate }}</a>
+        </li>
+        <li>
+          <a routerLink="/">{{ 'header.BUY_CAR' | translate }}</a>
+        </li>
+        <li>
+          <a routerLink="/">{{ 'footer.DEALERS' | translate }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="links-block">
+      <ul>
+        <li>
+          <a routerLink="/">{{ 'footer.TERMS' | translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/">{{ 'footer.PRIVACY' | translate }}</a>
+        </li>
+        <li>
+          <a routerLink="/">{{ 'footer.COOKIE_POLICY' | translate }}</a>
+        </li>
+        <li>
+          <a routerLink="/">{{ 'footer.ADC' | translate }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="links-block">
+      <ul>
+        <li>
+          <a routerLink="/">{{ 'header.CONTACT_US' | translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/">{{ 'footer.CAREERS' | translate }}</a>
+        </li>
+        <li>
+          <a routerLink="/">{{ 'footer.HELP' | translate }}</a>
+        </li>
+        <li>
+          <a routerLink="/">{{ 'footer.FAQ' | translate }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="buttons-block">
+      <div>
+        <img src="/assets/buttons/ios.png" alt="ios" class="ios">
+      </div>
+      <div>
+        <img src="/assets/buttons/android.png" alt="android">
+      </div>
+      <app-am-dropdown
+        [options]="languages"
+        customClass="lang-dropdown"
+        position="top"
+        defaultValue="en"
+        (onSelecting)="changeLanguage($event)"
+      ></app-am-dropdown>
+    </div>
+  </footer>
+</div>

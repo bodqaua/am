@@ -1,0 +1,75 @@
+@import "../../../../variables";
+
+footer {
+  border-top: 2px solid $color-gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 48px 0;
+
+  > div {
+    width: 20%;
+  }
+
+  .socials-block {
+    b {
+      padding: 16px 12px 12px 0;
+      display: block;
+      font-size: 1.05rem;
+    }
+
+    .socials {
+      padding-top: 14px;
+
+      i {
+        font-size: 24px;
+        margin: 0 12px;
+        cursor: pointer;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .links-block {
+    padding-top: 8px;
+
+    ul {
+      list-style: none;
+
+      li {
+        padding: 10px 0;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .buttons-block {
+    padding-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    img {
+      width: 80%;
+      height: auto;
+      cursor: pointer;
+      float: right;
+
+      &.ios {
+        transform: scale(0.85);
+      }
+    }
+  }
+
+  ::ng-deep {
+    .lang-dropdown {
+      max-width: 200px;
+
+      .am-dropdown__toggle {
+        width: 100%;
+      }
+    }
+  }
+}

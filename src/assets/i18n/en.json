@@ -1,0 +1,38 @@
+{
+  "header": {
+    "HOME": "Home",
+    "SELL_CAR": "Sell Car",
+    "BUY_CAR": "Buy Car",
+    "MARKET": "Market",
+    "CONTACT_US": "Contact Us",
+    "SIGN_IN": "Sign In",
+    "SIGN_UP": "Sign Up"
+  },
+  "landing": {
+    "subtitle": "Marketplace for buyers and sellers who love cars",
+    "title": "Find your next car here",
+    "CONTINUE_SEARCHING": "Continue your search",
+    "ALL_MAKES": "All makes, +1 filter",
+    "MOST_SELLING": "Most selling",
+    "BEST_SELLING": "Best selling",
+    "MOST_VISITED": "Most visited",
+    "MARKET_STATUS": "Market status",
+    "BODY_TYPE": "Browse by body type",
+    "SEE_ALL": "See all",
+    "BRAND_AND_MODEL": "Brand and model",
+    "MAX_PRICE": "Max price",
+    "ADVANCE_SEARCH": "Advance search",
+    "MOST_POPULAR": "Most popular in ",
+    "POPULAR_MAKES": "Popular makes"
+  },
+  "footer": {
+    "TERMS": "Terms of Use",
+    "PRIVACY": "Privacy Policy",
+    "DEALERS": "Dealers",
+    "COOKIE_POLICY": "Cookie Policy",
+    "ADC": "AdChoice",
+    "CAREERS": "Careers",
+    "HELP": "Help",
+    "FAQ": "FAQ"
+  }
+}

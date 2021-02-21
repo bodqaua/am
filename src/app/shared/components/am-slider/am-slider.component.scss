@@ -1,0 +1,39 @@
+@import "../../../../variables";
+
+.slider-wrapper {
+  position: relative;
+  padding-top: 24px;
+  .slider-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-bottom: 24px;
+    border-top: 24px;
+
+    ::ng-deep {
+      .slide {
+        display: inline-flex !important;
+        margin: 0 12px;
+      }
+    }
+  }
+
+  .left-arrow {
+    position: absolute;
+    left: -64px;
+    top: 35%;
+    font-size: 28px;
+    color: $text-color-gray;
+    cursor: pointer;
+  }
+
+  .right-arrow {
+    font-size: 36px;
+    position: absolute;
+    right: -64px;
+    top: 35%;
+    cursor: pointer;
+  }
+}

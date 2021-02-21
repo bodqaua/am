@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild} from '@angular/core';
 import {IDropdownOption} from '../../../models/Dropdown.model';
 
 @Component({
@@ -6,24 +6,29 @@ import {IDropdownOption} from '../../../models/Dropdown.model';
   templateUrl: './am-dropdown.component.html',
   styleUrls: ['./am-dropdown.component.scss']
 })
-export class AmDropdownComponent implements OnInit {
+export class AmDropdownComponent implements OnInit, OnChanges {
   @Input() options: IDropdownOption[] = [];
-  @Input() placeholder: string;
+  @Input() placeholder = '';
   @Input() leftIcon: string;
   @Input() customClass = '';
-
-  @Output('onSelecting') onSelecting: EventEmitter<IDropdownOption> = new EventEmitter<IDropdownOption>();
+  @Input() defaultValue = '';
+  @Input() position: 'top' | 'bottom' = 'bottom';
+  @Output() onSelecting: EventEmitter<IDropdownOption> = new EventEmitter<IDropdownOption>();
 
   @ViewChild('menu') menu: ElementRef;
   @ViewChild('toggle') toggle: ElementRef;
-
   public isDropdownOpen = false;
   public selectedOption: IDropdownOption;
+  private hadDefault = false;
 
   constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(): void {
+    this.setDefaultValue(this.defaultValue);
   }
 
   public selectOption(option: IDropdownOption): void {
@@ -51,5 +56,24 @@ export class AmDropdownComponent implements OnInit {
 
   public toggleDropdown(focus = false): void {
     this.isDropdownOpen ? this.closeDropdown() : this.openDropdown(focus);
+  }
+
+
+  private setDefaultValue(value): void {
+    if (!value || this.hadDefault) {
+      return;
+    }
+
+    const option: IDropdownOption = this.options.find((option) => {
+      return option.value === value;
+    });
+
+    if (option) {
+      this.selectedOption = option;
+      this.hadDefault = true;
+    } else {
+      console.warn('Invalid default value');
+    }
+
   }
 }

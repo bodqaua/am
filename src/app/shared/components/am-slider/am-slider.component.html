@@ -1,1 +1,7 @@
-<p>am-slider works!</p>
+<div class="slider-wrapper">
+  <i *ngIf="navigation" (click)="goToStep(currentStep - 1)" class="fas fa-arrow-left left-arrow"></i>
+  <div class="slider-container" #wrapper>
+    <ng-content></ng-content>
+  </div>
+  <i *ngIf="navigation" (click)="goToStep(currentStep + 1)" class="fas fa-arrow-right right-arrow"></i>
+</div>
