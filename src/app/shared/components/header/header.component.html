@@ -1,0 +1,39 @@
+<div class="container">
+  <header>
+    <a class="logo" routerLink="/">
+      auto.market
+    </a>
+    <nav>
+      <div>
+        <ul>
+          <li class="header-link" [class.active]="activeLink === 1" (click)="setActiveLink(1)">
+            <a routerLink="/">Home</a>
+          </li>
+          <li class="header-link" [class.active]="activeLink === 2" (click)="setActiveLink(2)">
+            <a routerLink="/">Sell Car</a>
+          </li>
+          <li class="header-link" [class.active]="activeLink === 3" (click)="setActiveLink(3)">
+            <a routerLink="/">Buy Car</a>
+          </li>
+          <li class="header-link" [class.active]="activeLink === 4" (click)="setActiveLink(4)">
+            <a routerLink="/">Market</a>
+          </li>
+          <li class="header-link" [class.active]="activeLink === 5" (click)="setActiveLink(5)">
+            <a routerLink="/">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="icons-block">
+        <i class="fas fa-car"></i>
+        <i class="far fa-star"></i>
+        <button class="header-icon-btn">
+          <i class="far fa-user"></i>
+          Sign in
+        </button>
+        <button class="am-btn am-btn-primary">
+          Sign up
+        </button>
+      </div>
+    </nav>
+  </header>
+</div>

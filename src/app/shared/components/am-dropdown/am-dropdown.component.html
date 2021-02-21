@@ -1,0 +1,24 @@
+<div class="am-dropdown {{customClass}}">
+  <div class="toggle" tabindex="0" (focus)="toggleDropdown(true)" #toggle>
+    <i *ngIf="leftIcon" [class]="leftIcon"></i>
+    <input tabindex="-1"
+           type="text"
+           class="am-dropdown__toggle"
+           [placeholder]="placeholder"
+           [value]="selectedOption?.label"
+           disabled>
+    <div class="toggle-icon">
+      <i *ngIf="isDropdownOpen" class="fas fa-chevron-up"></i>
+      <i *ngIf="!isDropdownOpen" class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+
+  <div class="am-dropdown__menu" #menu
+       [class.open]="isDropdownOpen"
+       (blur)="closeDropdown()"
+       [tabindex]="isDropdownOpen ? 0 : -1">
+    <p class="am-dropdown__item" *ngFor="let option of options" (click)="selectOption(option)">
+      {{option.label}}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="main-search-wrapper">
+  <div class="main-search__header">
+    <span>Advanced search</span>
+  </div>
+  <div class="main-search__content">
+    <div>
+      <app-am-dropdown
+        [options]="options"
+        leftIcon="fas fa-map-marker-alt"
+        placeholder="Toronto (+100km)"
+        customClass="main-search-dropdown-city"
+        (onSelecting)="log($event)"
+      ></app-am-dropdown>
+    </div>
+    <div class="vertical-divider"></div>
+    <div>
+      <app-am-dropdown
+        [options]="carOptions"
+        leftIcon="fas fa-car"
+        placeholder="Brand and model"
+        customClass="main-search-dropdown-car"
+        (onSelecting)="log($event)"
+      ></app-am-dropdown>
+    </div>
+    <div class="vertical-divider"></div>
+    <div class="price-block">
+      <i class="fas fa-wallet"></i>
+      <input type="number" class="main-search__number-input" placeholder="Max price">
+    </div>
+    <div>
+      <button class="am-btn am-btn-primary am-btn-icon">
+        <i class="fas fa-search"></i>
+        Search
+      </button>
+    </div>
+  </div>
+</div>

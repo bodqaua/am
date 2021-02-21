@@ -1,0 +1,75 @@
+@import "../../../../variables";
+
+header {
+  padding: 46px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    font-size: 17px;
+    font-weight: 700;
+    width: 13%;
+    display: flex;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 87%;
+
+    div:not(.icons-block) {
+      padding-right: 13.5%;
+
+      .header-link {
+        font-size: 18px;
+        font-weight: 500;
+        padding: 16px 0;
+        margin: 0 16px;
+        border-bottom: 2px solid transparent;
+
+        &.active {
+          border-color: $primary-color;
+        }
+      }
+    }
+  }
+
+  ul {
+    li {
+      list-style: none;
+      display: inline-block;
+    }
+  }
+
+  .icons-block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    i {
+      font-size: 20px;
+      padding: 16px;
+      cursor: pointer;
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+
+    .header-icon-btn {
+      background: transparent;
+      color: $color-dark;
+      border: none;
+      padding: 12px 29px 12px 20px;
+      font-size: 18px;
+      font-weight: 500;
+
+      > i {
+        padding-right: 15px;
+        font-size: 20px;
+      }
+    }
+  }
+}
